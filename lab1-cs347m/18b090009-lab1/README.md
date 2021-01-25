@@ -1,2 +1,3 @@
 # CS347m
-This is my repository of the solutions of all the labs in the course
+These are the solutions of Lab-1.
+While no code is copied, I have at several instances looked at the man pages and GeeksForGeeks for syntax only.
