@@ -8,19 +8,13 @@
 int main(int argc, char *argv[])
 {
 	FILE *fptr;
+	close(0);
 	fptr = fopen(argv[1], "r");
-
+	
 	if(fork()==0)
 	{
-		char *commands[] = {"./sample", NULL};
-		
-		char output[512];
-		fptr = freopen(argv[1], "r", stdin);
-		
-		execvp(commands[0], commands);
-		while(fgets(output, 512, fptr) != NULL)
-			printf("%s", output);
-
+		char *commands[]={"./sample", NULL};
+		execve(commands[0], commands, NULL);
 		fclose(fptr);
 	}
 	else
